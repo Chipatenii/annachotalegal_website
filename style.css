@@ -1,0 +1,728 @@
+/* =========================================================
+   ANN CHOTA LEGAL PRACTITIONERS
+   CONSOLIDATED PREMIUM OVERRIDES (SAFE, NON-BREAKING)
+   Paste at END of style.css or load as custom-overrides.css
+   ========================================================= */
+
+/* ---------- Theme Tokens ---------- */
+:root{
+  --gold: #cba35c;
+  --black: #000000;
+  --bg: #0b0b0b;
+  --bg2: #0a0a0a;
+  --card: #141414;
+  --border-soft: rgba(255,255,255,0.10);
+  --border-gold-soft: rgba(203,163,92,0.20);
+  --shadow-soft: 0 4px 25px rgba(0,0,0,0.20);
+  --shadow-hover: 0 15px 40px rgba(0,0,0,0.40);
+  --white: #ffffff;
+}
+
+/* ---------- Global Premium Surface ---------- */
+body.premium-solid{
+  background-color: var(--bg) !important;
+  color: var(--white);
+}
+
+/* Prevent anchor jump from hiding behind sticky header */
+section{ scroll-margin-top: 110px; }
+
+/* Utility used in hero buttons */
+.margin-l16{ margin-left: 16px !important; }
+.margin-t16{ margin-top: 16px !important; }
+.margin-t48{ margin-top: 48px !important; }
+.margin-t72{ margin-top: 72px !important; }
+.margin-b16{ margin-bottom: 16px !important; }
+.margin-b32{ margin-bottom: 32px !important; }
+.margin-b108{ margin-bottom: 108px !important; }
+.margin-bm54{ margin-bottom: 54px !important; }
+.alignc{ text-align: center; }
+.relative-z{ position: relative; z-index: 5; }
+.clearfix::after{ content: ""; display: table; clear: both; }
+
+/* Make section spacing consistent ONLY inside your single-page template */
+.custom-page-template .section-holder{
+  padding: 120px 0;
+  margin-bottom: 0 !important;
+}
+.bg-black-custom{
+  background-color: var(--bg) !important;
+  color: var(--white);
+}
+.bg-black-lighter{
+  background-color: var(--bg2);
+  color: var(--white);
+}
+
+/* ---------- Header: Custom Refactor (keeps existing IDs/classes) ---------- */
+.custom-header{
+  background: var(--black) !important;
+  border-bottom: 1px solid var(--gold);
+  z-index: 1050;
+  position: relative;
+}
+
+/* Top bar */
+.custom-header .header-top-bar{
+  background: #111;
+  border-bottom: 1px solid var(--border-gold-soft);
+  padding: 10px 0;
+  font-size: 13px;
+  color: var(--white);
+  font-family: 'Open Sans', sans-serif;
+}
+.custom-header .header-info-item{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--white);
+}
+.custom-header .header-info-item i{
+  color: var(--gold);
+  margin-right: 8px;
+  font-size: 14px;
+}
+.custom-header .header-info-item a{
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.custom-header .header-info-item a:hover{
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* Main nav bar */
+.custom-header .header-main-nav{
+  padding: 15px 0;
+  background: var(--black);
+}
+.custom-header .header-main-nav .logo img{
+  max-height: 55px;
+  width: auto;
+}
+
+/* Override theme .menu-nav inline-block behaviour ONLY inside header-main-nav */
+.custom-header .header-main-nav .menu-nav{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px; /* restore font-size because theme sets 0 in some places */
+}
+.custom-header .header-main-nav .menu-nav li{
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.custom-header .header-main-nav .menu-nav li a{
+  padding: 10px 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.custom-header .header-main-nav .menu-nav li a:hover{
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* Mobile nav button visibility handled in responsive section below */
+.custom-header .nav-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  margin-bottom: 0;
+}
+
+.nav-button .icon-bar{
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--white);
+  position: relative;
+}
+.nav-button .icon-bar::before,
+.nav-button .icon-bar::after{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: var(--white);
+  left: 0;
+}
+.nav-button .icon-bar::before{ top: -8px; }
+.nav-button .icon-bar::after{ top: 8px; }
+
+/* ---------- Hero: Minimal Premium ---------- */
+.hero-minimal{
+  position: relative;
+  background-color: var(--black);
+  height: 85vh;
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.hero-minimal::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 45%;
+  height: 45%;
+  background-image: url('images/logo-mark.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12; /* watermark */
+  z-index: 1;
+}
+.hero-minimal .container{
+  position: relative;
+  z-index: 5;
+}
+.hero-title{
+  font-family: 'Crimson Text', serif;
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+.hero-subtitle{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.btn-gold{
+  background: var(--gold);
+  color: #111;
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+}
+.btn-gold:hover{
+  background: transparent;
+  color: var(--gold);
+  text-decoration: none;
+}
+.btn-white-outline{
+  background: transparent;
+  color: var(--white);
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  border: 1px solid var(--white);
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+}
+.btn-white-outline:hover{
+  background: var(--white);
+  color: #011627;
+  text-decoration: none;
+}
+
+/* ---------- Section Intro / Headings ---------- */
+.intro-msg{ text-align: center; }
+.intro-normal{
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.intro-big-italic{
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--white);
+}
+.intro-year{
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 10px;
+}
+.heading-subtitle{
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.section-heading-title{
+  font-family: 'Crimson Text', serif;
+  font-size: 2.8rem;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+/* ---------- Cards / Practice Items (prevents thick gold border reappearing) ---------- */
+.practice-items-holder{
+  display: flex;
+  flex-wrap: wrap;
+}
+.practice-item-4cols{
+  margin-bottom: 30px;
+}
+.practice-items-holder .practice-item.card-minimal{
+  background: var(--card) !important;
+  border: 1px solid var(--border-soft) !important;
+  padding: 45px 35px !important;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px !important;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.practice-items-holder .practice-item.card-minimal:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+.practice-items-holder .practice-item.card-minimal .practice-icon{
+  font-size: 56px; /* slightly tighter than theme's 72 */
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.practice-items-holder .practice-item.card-minimal .practice-title{
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.practice-items-holder .practice-item.card-minimal p{
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+/* ---------- Founder Section ---------- */
+.lawyer-holder{
+  text-align: center;
+}
+.lawyer-holder img{
+  max-width: 100%;
+  border-radius: 4px;
+}
+.lawyer-position{
+  color: var(--gold);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.founder-bio .lead{
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.founder-bio p{
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+.lawyer-social{
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  gap: 15px;
+}
+.lawyer-social li a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+.lawyer-social li a:hover{
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #111;
+}
+
+/* ---------- Icon Boxes (Contact Section) ---------- */
+.icon-box-wrapper{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.icon-box-icon{
+  font-size: 24px;
+  color: var(--gold);
+  margin-right: 20px;
+  min-width: 30px;
+}
+.icon-box-title{
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* ---------- Contact Form: Dark Inputs ---------- */
+.bg-black-custom .comm-field,
+.bg-black-custom textarea{
+  background-color: #1a1a1a !important;
+  border: 1px solid var(--border-soft) !important;
+  color: var(--white) !important;
+  padding: 12px 15px !important;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+.bg-black-custom textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+.bg-black-custom label{
+  color: var(--white) !important;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+#submit{
+  background: var(--gold);
+  color: #111;
+  border: 1px solid var(--gold);
+  padding: 16px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#submit:hover{
+  background: transparent;
+  color: var(--gold);
+}
+.antispam{ display: none !important; }
+
+/* Contact icon boxes text clarity */
+.icon-box-description-alt{
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.icon-box-description-alt a{
+  color: inherit;
+  text-decoration: none;
+}
+.icon-box-description-alt a:hover{
+  color: var(--gold);
+}
+
+/* ---------- Footer ---------- */
+#footer-var2{
+  background: #111;
+  color: var(--white);
+  padding: 60px 0 30px;
+}
+.foo-block{
+  margin-bottom: 30px;
+}
+.widgettitle{
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.foo-block .textwidget{
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+.foo-block .textwidget a{
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.foo-block .textwidget a:hover{
+  color: var(--gold);
+}
+
+/* Footer quick links */
+.footer-links{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li{ margin-bottom: 8px; }
+.footer-links li a{
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.footer-links li a:hover{
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-social{
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.footer-social li a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.footer-social li a:hover{
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #111;
+}
+.foo-copyright{
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+/* Scroll to top */
+.scrollup{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+.scrolltop{
+  display: none;
+  width: 45px;
+  height: 45px;
+  background: var(--gold);
+  color: #111;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 45px;
+  transition: all 0.3s ease;
+}
+.scrolltop:hover{
+  background: #111;
+  color: var(--gold);
+}
+
+/* ---------- Mobile Menu ---------- */
+.menu-mask{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1040;
+}
+.menu-mask.active{ display: block; }
+
+.mobile-menu-holder{
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #111;
+  z-index: 1060;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  padding: 30px;
+}
+.mobile-menu-holder.active{ right: 0; }
+
+.exit-mobile{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.exit-mobile .icon-bar1,
+.exit-mobile .icon-bar2{
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: var(--white);
+  top: 50%;
+  left: 0;
+}
+.exit-mobile .icon-bar1{ transform: rotate(45deg); }
+.exit-mobile .icon-bar2{ transform: rotate(-45deg); }
+
+.menu-mobile{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.menu-mobile li{
+  margin-bottom: 15px;
+}
+.menu-mobile li a{
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.menu-mobile li a:hover{
+  color: var(--gold);
+}
+
+.menu-contact ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.menu-contact ul li{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+}
+.menu-contact ul li i{
+  color: var(--gold);
+  margin-right: 12px;
+  min-width: 20px;
+  margin-top: 3px;
+}
+.menu-contact ul li a{
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+.menu-contact ul li a:hover{
+  color: var(--gold);
+}
+.menu-contact .social-media{
+  display: flex;
+  gap: 10px;
+}
+.menu-contact .social-media li a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+.menu-contact .social-media li a:hover{
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #111;
+}
+
+/* ---------- "All writings in WHITE" enforcement (safe scope) ----------
+   If you want this ONLY for About section, keep it.
+   If you want it site-wide, tell me and I'll widen the selector safely.
+*/
+#about,
+#about h1,#about h2,#about h3,#about h4,#about h5,#about h6,
+#about p,#about .lead,#about span,#about li{
+  color: var(--white) !important;
+}
+#about a{
+  color: var(--white) !important;
+}
+#about a:hover{
+  color: var(--gold) !important;
+}
+
+/* ---------- Responsive: Header + Hero + Buttons ---------- */
+@media (max-width: 991px){
+  .custom-header .header-main-nav .menu-nav{ display: none; }
+  .custom-header .header-main-nav .nav-button{ display: block !important; }
+
+  .custom-header .header-top-bar .d-flex{
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .custom-header .header-info-item{
+    margin: 5px 0;
+    justify-content: center;
+  }
+  .custom-header .header-info-item span{ display: none; }
+
+  .hero-title{ font-size: 3.5rem; }
+  .hero-minimal{
+    height: auto;
+    padding: 120px 0;
+  }
+  
+  .founder-bio{ margin-top: 40px; }
+}
+
+@media (min-width: 992px){
+  .custom-header .header-main-nav .nav-button{ display: none !important; }
+}
+
+@media (max-width: 767px){
+  .hero-title{ font-size: 2.5rem; }
+  .hero-subtitle{ font-size: 1.2rem; }
+
+  .btn-gold,
+  .btn-white-outline{
+    display: block;
+    margin: 10px 0 !important;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .section-heading-title{ font-size: 2rem; }
+  .intro-big-italic{ font-size: 2rem; }
+}
+
+/* =========================================================
+   END CONSOLIDATED PREMIUM OVERRIDES
+   ========================================================= */
